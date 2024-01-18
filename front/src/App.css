@@ -1,0 +1,355 @@
+#innerMain {
+  background-image: url("../public/images/emptyBlackboardWithStationery.jpg");
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  overflow-x: hidden;
+}
+
+#mainOverlay {
+  width: 100%;
+}
+
+html[data-bs-theme="light"] #mainOverlay {
+  background-color: #ffffff50;
+}
+
+html[data-bs-theme="dark"] #mainOverlay {
+  background-color: #00000080;
+}
+
+html[data-bs-theme="dark"] .navbar-nav .nav-link.active {
+  font-weight: 600;
+}
+
+html[data-bs-theme="dark"] p,
+html[data-bs-theme="dark"] span,
+html[data-bs-theme="dark"] i,
+html[data-bs-theme="dark"] h1,
+html[data-bs-theme="dark"] h2,
+html[data-bs-theme="dark"] h3,
+html[data-bs-theme="dark"] h5,
+html[data-bs-theme="dark"] a,
+html[data-bs-theme="dark"] label,
+html[data-bs-theme="dark"] div,
+html[data-bs-theme="dark"] .card {
+  color: white;
+}
+
+.leaderboardDiv {
+  transition: all 0.2s ease-in-out;
+}
+
+.leaderboardDiv:hover {
+  transform: scale(1.1);
+  background-image: linear-gradient(
+    0deg,
+    rgba(234, 246, 115, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.myDataDiv {
+  transition: all 0.2s ease-in-out;
+}
+
+.myDataDiv:hover {
+  transform: scale(1.1);
+  background-image: linear-gradient(
+    0deg,
+    rgba(255, 96, 96, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+* {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+}
+
+.leaderboard {
+  box-shadow: inset 0 0 0 0 #54b3d6;
+  color: #54b3d6;
+  padding: 0 0.25rem;
+  margin: 0 -0.25rem;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.leaderboard:hover {
+  color: #fff;
+  box-shadow: inset 200px 0 0 0 #54b3d6;
+}
+
+.leaderboard {
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.scoreHeader {
+  color: inherit;
+  text-decoration: none;
+  font-size: 45px;
+}
+
+.scoreHeader {
+  background: linear-gradient(
+      to right,
+      rgba(100, 200, 200, 1),
+      rgba(100, 200, 200, 1)
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 0, 0, 1),
+      rgba(255, 0, 180, 1),
+      rgba(0, 100, 200, 1)
+    );
+  background-size: 100% 10px, 0 10px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.scoreHeader:hover {
+  background-size: 0 10px, 100% 10px;
+}
+
+.letsBeginButton {
+  padding: 10px 20px;
+  border: none;
+  font-size: 17px;
+  color: #fff;
+  border-radius: 7px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s;
+  transition-property: box-shadow;
+  width: 250px;
+}
+
+.letsBeginButton {
+  background: rgb(0, 140, 255);
+  box-shadow: 0 0 25px rgb(0, 140, 255);
+}
+
+.letsBeginButton:hover {
+  box-shadow: 0 0 5px rgb(0, 140, 255), 0 0 25px rgb(0, 140, 255),
+    0 0 50px rgb(0, 140, 255), 0 0 100px rgb(0, 140, 255);
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(255, 65, 65);
+}
+
+/* plus sign */
+.signLogout {
+  width: 100%;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signLogout svg {
+  width: 17px;
+}
+
+.signLogout svg path {
+  fill: white;
+}
+/* text */
+.textLogout {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1em;
+  font-weight: 600;
+  transition-duration: 0.3s;
+}
+/* hover effect on button width */
+.logoutBtn:hover {
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: 0.3s;
+}
+
+.logoutBtn:hover .signLogout {
+  width: 30%;
+  transition-duration: 0.3s;
+  padding-left: 20px;
+}
+/* hover effect button's text */
+.logoutBtn:hover .textLogout {
+  opacity: 1;
+  width: 70%;
+  transition-duration: 0.3s;
+  padding-right: 10px;
+}
+/* button click effect*/
+.logoutBtn:active {
+  transform: translate(2px, 2px);
+}
+
+.signinBtn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(29, 185, 84);
+}
+
+/* plus sign */
+.signSignin {
+  width: 100%;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signSignin svg {
+  width: 17px;
+}
+
+.signSignin svg path {
+  fill: white;
+}
+/* text */
+.textSignin {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1em;
+  font-weight: 600;
+  transition-duration: 0.3s;
+}
+/* hover effect on button width */
+.signinBtn:hover {
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: 0.3s;
+}
+
+.signinBtn:hover .signSignin {
+  width: 30%;
+  transition-duration: 0.3s;
+  padding-left: 20px;
+}
+/* hover effect button's text */
+.signinBtn:hover .textSignin {
+  opacity: 1;
+  width: 70%;
+  transition-duration: 0.3s;
+  padding-right: 10px;
+}
+/* button click effect*/
+.signinBtn:active {
+  transform: translate(2px, 2px);
+}
+
+.signupBtn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(163, 142, 255);
+}
+
+/* plus sign */
+.signSignup {
+  width: 100%;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signSignup svg {
+  width: 17px;
+}
+
+.signSignup svg path {
+  fill: white;
+}
+/* text */
+.textSignup {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1em;
+  font-weight: 600;
+  transition-duration: 0.3s;
+}
+/* hover effect on button width */
+.signupBtn:hover {
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: 0.3s;
+}
+
+.signupBtn:hover .signSignup {
+  width: 30%;
+  transition-duration: 0.3s;
+  padding-left: 20px;
+}
+/* hover effect button's text */
+.signupBtn:hover .textSignup {
+  opacity: 1;
+  width: 70%;
+  transition-duration: 0.3s;
+  padding-right: 10px;
+}
+/* button click effect*/
+.signupBtn:active {
+  transform: translate(2px, 2px);
+}
+
+.cardRecommendation {
+  transition: all 0.2s ease-in-out;
+}
+
+.cardRecommendation:hover {
+  transform: scale(1.1);
+  background-image: linear-gradient(
+    0deg,
+    rgba(234, 246, 115, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}

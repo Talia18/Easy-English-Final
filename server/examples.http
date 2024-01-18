@@ -1,0 +1,194 @@
+@local=http://localhost:3900
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTIyZGEzYmEwNjg2YjYwNmFlMzY5ZmYiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjk2NzgyOTUxfQ.v41OQNd68dfUyCMKXYkFfLxAb7S0zp54ayCcjxWDvF8
+@tokenAdmin=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NThiMzIzZWY0MTFiYzE5NDRlYmMxNzciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MDQxMjg1NTh9.hz1bTIwXk91umNLpDAU_HnRtAidqtUHUV5gKc-UZOp8
+
+
+### Users Route
+
+
+### Create New User / Register / Sign up
+POST {{local}}/users
+Content-Type: application/json
+
+{
+    "name":{
+        "first":"Ben",
+        "last":"Cohen"
+    },
+    "phone":"0526094760",
+    "email":"ben@ben.net",
+    "password":"Aa123456!",
+    "address":{
+        "country":"Israel",
+        "city":"Netanya"
+    }
+}
+
+
+### Authenticate (Login) / Sign in
+POST {{local}}/users/login
+Content-Type: application/json
+
+{
+  "email": "lior@lior.com",
+  "password": "Aa123456!"
+}
+
+### Authenticate (Login Admin) / Sign in
+POST {{local}}/users/login
+Content-Type: application/json
+
+{
+  "email": "lior@lior.com",
+  "password": "Aa123456!"
+}
+
+
+### Get all users
+GET {{local}}/users/
+x-auth-token: {{tokenAdmin}}
+
+
+### Get myself
+GET {{local}}/users/me
+x-auth-token: {{tokenAdmin}}
+
+
+### Get my questions
+GET {{local}}/users/myQuestions
+x-auth-token: {{tokenAdmin}}
+
+
+### Get user by ID
+GET {{local}}/users/651da89b6b3086b72f2c352e
+x-auth-token: {{token}}
+
+
+### Edit user
+PUT {{local}}/users/6522da3ba0686b606ae369fd
+Content-Type: application/json
+x-auth-token: {{tokenAdmin}}
+
+{
+    "name":{
+        "first":"KOKO2",
+        "last":"SHMERLING"
+    },
+    "phone":"0526094760",
+    "email":"ben@ben.net",
+    "password":"Aa123456!",
+    "address":{
+        "country":"Israel",
+        "city":"Netanya"
+    }
+}
+
+
+### Delete user
+DELETE {{local}}/users/651da89b6b3086b72f2c352e
+x-auth-token: {{token}}
+
+
+### Static check
+GET {{local}}/hello.html
+
+
+##############################################################################################################################################################################################################################
+
+
+### Questions Route
+
+
+### Get all questions
+GET {{local}}/questions
+x-auth-token: {{tokenAdmin}}
+
+
+### Get question by ID
+GET {{local}}/questions/651ff06b08ed74ed1c5e8abd
+
+
+### Create new question
+POST {{local}}/questions
+Content-Type: application/json
+x-auth-token: {{tokenAdmin}}
+
+{
+    "question": "He ______ to school everyday.",
+    "options": [
+      {
+        "number": 1,
+        "title": "Goes",
+        "correct": true
+      },
+      {
+        "number": 2,
+        "title": "Drinks",
+        "correct": false
+      },
+      {
+        "number": 3,
+        "title": "Jumps",
+        "correct": false
+      },
+      {
+        "number": 4,
+        "title": "Writes",
+        "correct": false
+      }
+    ],
+    "levelNumber": 1,
+    "levelDescription": "Easy",
+    "tags": "School, Goes, Drinks, Jumps, Writes, Study, Education"
+}
+
+
+### Edit question
+PUT {{local}}/questions/6524197d16adb6d1ed960a65
+Content-Type: application/json
+x-auth-token: {{tokenAdmin}}
+
+{
+    "question": "The ______ Barked111111111111111",
+    "options": [
+      {
+        "number": 1,
+        "title": "Cat",
+        "correct": false
+      },
+      {
+        "number": 2,
+        "title": "Dolphin",
+        "correct": false
+      },
+      {
+        "number": 3,
+        "title": "Dog",
+        "correct": true
+      },
+      {
+        "number": 4,
+        "title": "Mouse",
+        "correct": false
+      }
+    ],
+    "levelNumber": 1,
+    "levelDescription": "Easy",
+    "tags": "Animal, Animals, Cat, Dolphin, Dog, Mouse, Easy"
+}
+
+
+### Delete question
+DELETE {{local}}/questions/651ff06b08ed74ed1c5e8ab7
+x-auth-token: {{tokenAdmin}}
+
+###
+PUT {{local}}/users/addScore
+x-auth-token: {{tokenAdmin}}
+Content-Type: application/json
+
+{
+  "question_id": "658b323ff411bc1944ebc183",
+  "answer": "Towels",
+  "correct": false
+}
